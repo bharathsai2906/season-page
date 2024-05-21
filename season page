@@ -1,0 +1,101 @@
+.HTML...
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>season</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="season.css">
+<body>
+    <div>
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/seasons-switcher-four-seasons-xs-img.png" class="season-image d-inline d-md-none" id="seasonSmallImage" />
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/seasons-switcher-four-seasons-md-img.png" class="season-image d-none d-md-inline" id="seasonMediumImage" />
+        <div class="d-flex flex-row justify-content-center mt-4">
+            <button class="button spring-button" id="springBtn" onclick="changeSeasonToSpring()">Spring</button>
+            <button class="button summer-button" id="summerBtn" onclick="changeSeasonToSummer()">Summer</button>
+            <button class="button autumn-button" id="autumnBtn" onclick="changeSeasonToAutumn()">Autumn</button>
+            <button class="button winter-button" id="winterBtn" onclick="changeSeasonToWinter()">Winter</button>
+        </div>
+        
+    </div>
+    <script src="season.js"></script>
+</body>
+</html>
+
+.CSS...
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.season-image {
+    width: 100%;
+    height: 85vh;
+}
+
+.button {
+    color: white;
+    background-color: #cbd2d9;
+    font-family: "Roboto";
+    font-size: 14px;
+    width: 80px;
+    height: 32px;
+    border-width: 0;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.spring-button {
+    background-color: #3a7333;
+}
+
+.summer-button {
+    background-color: #e0bb00;
+}
+
+.autumn-button {
+    background-color: #b04400;
+}
+
+.winter-button {
+    background-color: #0f7cb6;
+}
+
+
+.JS...
+
+let seasonSmallImageElement = document.getElementById("seasonSmallImage");
+let seasonMediumImageElement = document.getElementById("seasonMediumImage");
+let springSmallImage = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/seasons-switcher-spring-xs-img.png";
+let springMediumImage = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/seasons-switcher-spring-md-img.png";
+let summerSmallImage = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/seasons-switcher-summer-xs-img.png";
+let summerMediumImage = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/seasons-switcher-summer-md-img.png";
+let autumnSmallImage = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/seasons-switcher-autumn-xs-img.png";
+let autumnMediumImage = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/seasons-switcher-autumn-md-img.png";
+let winterSmallImage = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/seasons-switcher-winter-xs-img.png";
+let winterMediumImage = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/seasons-switcher-winter-md-img.png";
+
+function changeSeasonToSpring() {
+    seasonSmallImageElement.src = springSmallImage;
+    seasonMediumImageElement.src = springMediumImage
+}
+
+function changeSeasonToSummer() {
+    seasonSmallImageElement.src = summerSmallImage;
+    seasonMediumImageElement.src = summerMediumImage
+}
+
+function changeSeasonToAutumn() {
+    seasonSmallImageElement.src = autumnSmallImage;
+    seasonMediumImageElement.src = autumnMediumImage
+}
+
+function changeSeasonToWinter() {
+    seasonSmallImageElement.src = winterSmallImage;
+    seasonMediumImageElement.src = winterMediumImage
+}
